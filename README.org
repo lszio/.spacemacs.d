@@ -1,0 +1,22 @@
+#+TITLE: Liszt's Spacemacs
+
+* Install
+** Emacs
+   - 26.2
+* Content
+** layers
+   - liszt
+   - liszt-linux
+   - liszt-win10
+** scripts
+   - Install :: Compile emacs and clone the repositories
+     - [[][Spacemacs]
+     - [[][My config]
+** snippets
+   personal snippets
+** tips
+   tips in learning emacs
+** utils
+   useful libraries
+* Features
+

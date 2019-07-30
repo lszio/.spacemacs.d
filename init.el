@@ -2,6 +2,10 @@
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
+(defconst linux?   (eq system-type 'gnu/linux) "Are we on a linux machine?")
+(defconst mac?     (eq system-type 'darwin)    "Are we on a macOS machine?")
+(defconst windows? (not (or linux? mac?))      "Are we on windows machine?")
+
 (defun dotspacemacs/layers ()
   "Layer configuration:
 This function should only modify configuration layer settings."
@@ -22,7 +26,7 @@ This function should only modify configuration layer settings."
    ;; (default 'unused)
    dotspacemacs-enable-lazy-installation 'unused
 
-   ;; If non-nil then Spacemacs will ask for confirmation before installing
+   ;; If non-nil then  will ask for confirmation before installing
    ;; a layer lazily. (default t)
    dotspacemacs-ask-for-lazy-installation t
 
@@ -33,27 +37,35 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
-     ;; ----------------------------------------------------------------
+   '(;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ;; auto-completion
-     ;; better-defaults
-     emacs-lisp
-     git
+     ;; -- spacemacs --
      helm
-     ;; markdown
-     multiple-cursors
-     ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     ;; spell-checking
-     ;; syntax-checking
      treemacs
-     ;; version-control
+     ;; -- languages --
+     python
+     markdown
+     emacs-lisp
+     javascript
+     html
+     git
+     org
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom)
+     ;; ---- tools ----
+     wakatime
+     plantuml
+     graphviz
+     auto-completion
+     better-defaults
+     ;; spell-checking
+     syntax-checking
+     multiple-cursors
+     ;; --  my layer --
      liszt
      )
 
@@ -210,7 +222,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font or prioritized list of fonts.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 10.0
+                               :size 12.0
                                :weight normal
                                :width normal)
 
@@ -362,7 +374,7 @@ It should only modify the values of Spacemacs settings."
    ;;   :size-limit-kb 1000)
    ;; When used in a plist, `visual' takes precedence over `relative'.
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers t
 
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
@@ -459,9 +471,26 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
         '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
           ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
           ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
-  (if (eq system-type 'gnu/linux)
-      (setq spacemacs-path "~/.spacemacs.d/")
-    (setq spacemacs-path "c:/Users/liszt/AppData/Roaming/.spacemacs.d/"))
+  (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
+  (load-file (expand-file-name "local.el" dotspacemacs-directory))
+
+  ;; turn on time-mode
+  (display-time-mode 1)
+  (setq display-time-24hr-format t)
+
+  ;; set plantuml
+  ;; (setq org-plantuml-jar-path
+  ;;       (expand-file-name (concat spacemacs-path "utils/plantuml.jar")))
+
+  ;; set org-babel
+  ;; (require 'ob-python)
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((python . t)
+     (plantuml . t)
+     (dot . t)
+     (latex . t)))
+  ;; (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
   )
 
 (defun dotspacemacs/user-load ()
@@ -477,7 +506,15 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+  ;; treemacs
+  (setq treemacs-width 30)
+  ;; set fill-column
+  (setq fci-rule-width 3)
+  (setq fci-rule-column 81)
+  (add-hook 'prog-mode-hook 'fci-mode)
+  (when windows?
+    (message "In Windows"))
+  (when linux?
+    (message "In Linux"))
   )
 
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
