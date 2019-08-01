@@ -3,6 +3,14 @@
 * Install
 ** Emacs
    - 26.2
+*** Build
+#+BEGIN_SRC shell
+sudo apt-get update
+sudo apt-get install autoconf -y
+sudo apt-get install build-essential automake texinfo libjpeg-dev libncurses5-dev libtiff5-dev libgif-dev libpng-dev libxpm-dev libgtk-3-dev libgnutls28-dev -y
+
+#+END_SRC    
+
 * Content
 ** layers
    - liszt
@@ -10,8 +18,8 @@
    - liszt-win10
 ** scripts
    - Install :: Compile emacs and clone the repositories
-     - [[][Spacemacs]
-     - [[][My config]
+     - [[https://github.com/syl20bnr/spacemacs][Spacemacs]
+     - [[https://github.com/Liszt21/.spacemacs.d][My config]
 ** snippets
    personal snippets
 ** tips
@@ -19,4 +27,5 @@
 ** utils
    useful libraries
 * Features
-
+  - Different config in linux and windows :: Disable some packages in windows
+  - Develop branch :: Try some awsome packages
