@@ -2,14 +2,17 @@
 
 * Install
 ** Emacs
-   - 26.2
-*** Build
+   version : latest(27.0.50)
+   via Lisux (this tool will setup spacemacs)
 #+BEGIN_SRC shell
-sudo apt-get update
-sudo apt-get install autoconf -y
-sudo apt-get install build-essential automake texinfo libjpeg-dev libncurses5-dev libtiff5-dev libgif-dev libpng-dev libxpm-dev libgtk-3-dev libgnutls28-dev -y
+sh -c "$(curl -fsSL http://raw.github.com/Liszt21/Lisux/master/scripts/install_emacs.sh)"
+#+END_SRC
 
-#+END_SRC    
+** Spacemacs
+     Scripts
+#+BEGIN_SRC shell
+sh -c "$(curl -fsSL http://raw.github.com/Liszt21/.spacemacs.d/master/scripts/setup.sh)"
+#+END_SRC  
 
 * Content
 ** layers
@@ -26,6 +29,8 @@ sudo apt-get install build-essential automake texinfo libjpeg-dev libncurses5-de
    tips in learning emacs
 ** utils
    useful libraries
+
 * Features
   - Different config in linux and windows :: Disable some packages in windows
   - Develop branch :: Try some awsome packages
+  - Setup script :: spacemacs setup & emacs install (Check Lisux)
