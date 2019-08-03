@@ -1,9 +1,9 @@
 
 (configuration-layer/declare-layers '(
                                       ;; -- personal ---
-                                      ;; liszt-ide
+                                      liszt-org
                                       ))
-
+;; Load different layer in different system
 (cond (linux? (configuration-layer/declare-layers '(
                                                     liszt-linux
                                                     )))

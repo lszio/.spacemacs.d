@@ -13,7 +13,7 @@ This function should only modify configuration layer settings."
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
    ;; or `spacemacs'. (default 'spacemacs)
-   dotspacemacs-distribution 
+   dotspacemacs-distribution 'spacemacs
 
    ;; Lazy installation of layers (i.e. layers are installed only when a file
    ;; with a supported type is opened). Possible values are `all', `unused'
@@ -49,15 +49,12 @@ This function should only modify configuration layer settings."
      ;; -- languages --
      python
      markdown
-     emacs-lisp
      javascript
-     html
-     git
-     org
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
      ;; ---- tools ----
+     git
      wakatime
      plantuml
      graphviz
