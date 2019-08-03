@@ -1,8 +1,10 @@
 #+TITLE: Liszt's Spacemacs
+#+STARTUP: content
 
 * Install
 ** Emacs
    version : latest(27.0.50)
+
    via Lisux (this tool will setup spacemacs)
 #+BEGIN_SRC shell
 sh -c "$(curl -fsSL http://raw.github.com/Liszt21/Lisux/master/scripts/install_emacs.sh)"
@@ -14,15 +16,21 @@ sh -c "$(curl -fsSL http://raw.github.com/Liszt21/Lisux/master/scripts/install_e
 sh -c "$(curl -fsSL http://raw.github.com/Liszt21/.spacemacs.d/master/scripts/setup.sh)"
 #+END_SRC  
 
+* Features
+  - Different config in linux and windows :: Disable some packages in windows
+  - Develop branch :: Try some awsome packages
+  - Setup script :: spacemacs setup & emacs install (Check Lisux)
+                    
 * Content
 ** layers
    - liszt
+   - liszt-org
    - liszt-linux
    - liszt-win10
 ** scripts
    - Install :: Compile emacs and clone the repositories
-     - [[https://github.com/syl20bnr/spacemacs][Spacemacs]
-     - [[https://github.com/Liszt21/.spacemacs.d][My config]
+     - [[https://github.com/syl20bnr/spacemacs][Spacemacs]]
+     - [[https://github.com/Liszt21/.spacemacs.d][My config]]
 ** snippets
    personal snippets
 ** tips
@@ -30,7 +38,3 @@ sh -c "$(curl -fsSL http://raw.github.com/Liszt21/.spacemacs.d/master/scripts/se
 ** utils
    useful libraries
 
-* Features
-  - Different config in linux and windows :: Disable some packages in windows
-  - Develop branch :: Try some awsome packages
-  - Setup script :: spacemacs setup & emacs install (Check Lisux)
