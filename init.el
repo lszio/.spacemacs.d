@@ -48,6 +48,7 @@ This function should only modify configuration layer settings."
      treemacs
      ;; -- languages --
      python
+     html
      markdown
      javascript
      (shell :variables
@@ -212,7 +213,7 @@ It should only modify the values of Spacemacs settings."
    ;; refer to the DOCUMENTATION.org for more info on how to create your own
    ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
+   dotspacemacs-mode-line-theme '(spacemacs :separator box :separator-scale 1)
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -457,6 +458,7 @@ This function defines the environment variables for your Emacs session. By
 default it calls `spacemacs/load-spacemacs-env' which loads the environment
 variables declared in `~/.spacemacs.env' or `~/.spacemacs.d/.spacemacs.env'.
 See the header of this file for more information."
+  ;; (spacemacs/load-spacemacs-env)
   )
 
 (defun dotspacemacs/user-init ()

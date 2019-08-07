@@ -30,7 +30,14 @@
 ;;; Code:
 
 (defconst liszt-linux-packages
-  '()
+  '(
+    (aweshell :location (recipe
+                         :fetcher github
+                         :repo "manateelazycat/aweshell"))
+    (eaf :location (recipe
+                    :fetcher github
+                    :repo "manateelazycat/emacs-application-framework"))
+    )
   "The list of Lisp packages required by the liszt-linux layer.
 
 Each entry is either:
@@ -58,6 +65,12 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+(defun liszt-linux/init-eaf()
+  (use-package eaf)
+  )
 
+(defun liszt-linux/init-aweshell()
+  (use-package aweshell)
+  )
 (message "|-------------------Load liszt-linux layer--------------------|")
 ;;; packages.el ends here
