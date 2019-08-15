@@ -30,7 +30,20 @@
 ;;; Code:
 
 (defconst liszt-packages
-  '()
+  '(
+    cnfonts
+    (awesome-tab :location (recipe
+                            :fetcher github
+                            :repo "manateelazycat/awesome-tab"))
+    (aweshell :location (recipe
+                         :fetcher github
+                         :repo "manateelazycat/aweshell")
+              :toggle linux?)
+    (eaf :location (recipe
+                    :fetcher github
+                    :repo "manateelazycat/emacs-application-framework")
+          :toggle linux?)
+    )
   "The list of Lisp packages required by the liszt layer.
 
 Each entry is either:
@@ -58,5 +71,25 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+(defun liszt/init-cnfonts()
+  (use-package cnfonts)
+  (cnfonts-enable)
+  )
+
+(defun liszt/init-awesome-tab()
+  (use-package awesome-tab
+    :config
+    (awesome-tab-mode t)
+    (setq awesome-tab-style 'box)
+    ))
+
+
+(defun liszt/init-eaf()
+  (use-package eaf)
+  )
+
+(defun liszt/init-aweshell()
+  (use-package aweshell)
+  )
 (message "|----------------------Load liszt layer-----------------------|")
 ;;; packages.el ends here
