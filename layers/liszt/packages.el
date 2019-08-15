@@ -35,6 +35,14 @@
     (awesome-tab :location (recipe
                             :fetcher github
                             :repo "manateelazycat/awesome-tab"))
+    (aweshell :location (recipe
+                         :fetcher github
+                         :repo "manateelazycat/aweshell")
+              :toggle linux?)
+    (eaf :location (recipe
+                    :fetcher github
+                    :repo "manateelazycat/emacs-application-framework")
+          :toggle linux?)
     )
   "The list of Lisp packages required by the liszt layer.
 
@@ -76,5 +84,12 @@ Each entry is either:
     ))
 
 
+(defun liszt/init-eaf()
+  (use-package eaf)
+  )
+
+(defun liszt/init-aweshell()
+  (use-package aweshell)
+  )
 (message "|----------------------Load liszt layer-----------------------|")
 ;;; packages.el ends here

@@ -47,6 +47,7 @@ This function should only modify configuration layer settings."
      helm
      treemacs
      ;; -- languages --
+     yaml
      python
      html
      markdown
@@ -182,8 +183,12 @@ It should only modify the values of Spacemacs settings."
    ;; `recents' `bookmarks' `projects' `agenda' `todos'.
    ;; List sizes may be nil, in which case
    ;; `spacemacs-buffer-startup-lists-length' takes effect.
-   dotspacemacs-startup-lists '((recents . 5)
-                                (projects . 7))
+   dotspacemacs-startup-lists '((recents . 6)
+                                (projects . 3)
+                                (todos . 6)
+                                (agenda . 3)
+                                (bookmark . 3)
+                                )
 
    ;; True if the home buffer should respond to resize events. (default t)
    dotspacemacs-startup-buffer-responsive t
