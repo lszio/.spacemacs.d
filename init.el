@@ -327,7 +327,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
 
    ;; If non-nil the frame is undecorated when Emacs starts up. Combine this
    ;; variable with `dotspacemacs-maximized-at-startup' in OSX to obtain
@@ -486,16 +486,6 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   ;; set plantuml
   ;; (setq org-plantuml-jar-path
   ;;       (expand-file-name (concat spacemacs-path "utils/plantuml.jar")))
-
-  ;; set org-babel
-  ;; (require 'ob-python)
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   '((python . t)
-     (plantuml . t)
-     (dot . t)
-     (latex . t)))
-  ;; (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
   )
 
 (defun dotspacemacs/user-load ()
@@ -518,7 +508,8 @@ before packages are loaded."
   (setq fci-rule-column 81)
   (add-hook 'prog-mode-hook 'fci-mode)
   (when windows?
-    (message "In Windows"))
+    (message "In Windows")
+    )
   (when linux?
     (message "In Linux"))
   )
