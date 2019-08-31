@@ -30,7 +30,9 @@
 ;;; Code:
 
 (defconst liszt-org-packages
-  '()
+  '(
+    deft
+    )
   "The list of Lisp packages required by the liszt-org layer.
 
 Each entry is either:
@@ -58,5 +60,11 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+(defun liszt-org/init-deft()
+  "init deft"
+  (use-package deft
+    :defer t
+    :config (setq deft-recursive t)
+    ))
 
 ;;; packages.el ends here

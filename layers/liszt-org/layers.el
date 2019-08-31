@@ -1,5 +1,6 @@
 
 (configuration-layer/declare-layers '(
                                       ;; -- personal ---
-                                      org
+                                      (org :variables
+                                           org-enable-org-journal-support t)
                                       ))
