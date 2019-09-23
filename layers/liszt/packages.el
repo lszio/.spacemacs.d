@@ -43,6 +43,7 @@
     ;;                 :fetcher github
     ;;                 :repo "manateelazycat/emacs-application-framework")
     ;;       :toggle linux?)
+    posframe
     pyim
     )
   "The list of Lisp packages required by the liszt layer.
@@ -92,13 +93,17 @@ Each entry is either:
 (defun liszt/init-aweshell()
   (use-package aweshell)
   )
+
+(defun liszt/init-posframe()
+  (use-package posframe)
+  )
+
 (defun liszt/init-pyim()
   ;; (use-package pyim)
   (use-package pyim
     :ensure nil
     :demand t
     :config
-    ;; 激活 basedict 拼音词库，五笔用户请继续阅读 README
     (use-package pyim-basedict
       :ensure nil
       :config (pyim-basedict-enable))
@@ -129,14 +134,15 @@ Each entry is either:
     ;; 使用 pupup-el 来绘制选词框, 如果用 emacs26, 建议设置
     ;; 为 'posframe, 速度很快并且菜单不会变形，不过需要用户
     ;; 手动安装 posframe 包。
-    (setq pyim-page-tooltip 'popup)
+    (setq pyim-page-tooltip 'posframe)
 
     ;; 选词框显示5个候选词
     (setq pyim-page-length 5)
 
     :bind
-    (("M-j" . pyim-convert-string-at-point) ;与 pyim-probe-dynamic-english 配合
-    ("C-;" . pyim-delete-word-from-personal-buffer)))
+    (("C-;" . pyim-convert-string-at-point) ;与 pyim-probe-dynamic-english 配合
+    ("C-'" . pyim-delete-word-from-personal-buffer))
+    )
   )
 (message "|----------------------Load liszt layer-----------------------|")
 ;;; packages.el ends here
