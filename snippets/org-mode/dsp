@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: DataStructure Practice
+# key: dsp
+# --
+
+***** $1
+      #+begin_src c++
+        $0
+      #+end_src
