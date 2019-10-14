@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: PAT
+# key: pat
+# --
+
+#+TITLE: PAT_Advanced:
+#+AUTHOR: Liszt21
+
+* 题目
+
+* 思路
+
+* 代码
+
+#+begin_src c++
+
+#+end_src
