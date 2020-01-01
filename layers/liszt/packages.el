@@ -45,6 +45,7 @@
     ;;       :toggle linux?)
     posframe
     pyim
+    leetcode
     )
   "The list of Lisp packages required by the liszt layer.
 
@@ -97,6 +98,13 @@ Each entry is either:
 (defun liszt/init-posframe()
   (use-package posframe)
   )
+
+(defun liszt/init-leetcode()
+  (use-package leetcode
+    :config
+    (setq leetcode-prefer-language "python3")
+    (setq leetcode-prefer-sql "sqlite")
+    ))
 
 (defun liszt/init-pyim()
   ;; (use-package pyim)
