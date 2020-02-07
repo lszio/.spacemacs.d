@@ -31,7 +31,7 @@
 
 (defconst liszt-packages
   '(
-    cnfonts
+    (cnfonts)
     (awesome-tab :location (recipe
                             :fetcher github
                             :repo "manateelazycat/awesome-tab"))
@@ -76,7 +76,7 @@ Each entry is either:
 
 (defun liszt/init-cnfonts()
   (use-package cnfonts)
-  (cnfonts-enable)
+  (if (not macos?) (cnfonts-enable))
   )
 
 (defun liszt/init-awesome-tab()

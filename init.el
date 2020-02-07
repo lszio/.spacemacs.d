@@ -3,8 +3,8 @@
 ;; It must be stored in your home directory.
 
 (defconst linux?   (eq system-type 'gnu/linux) "Are we on a linux machine?")
-(defconst mac?     (eq system-type 'darwin)    "Are we on a macOS machine?")
-(defconst windows? (not (or linux? mac?))      "Are we on windows machine?")
+(defconst macos?   (eq system-type 'darwin)    "Are we on a macOS machine?")
+(defconst windows? (not (or linux? macos?))      "Are we on windows machine?")
 
 (defun dotspacemacs/layers ()
   "Layer configuration:
@@ -226,7 +226,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font or prioritized list of fonts.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 12.0
+                               :size 16.0
                                :weight normal
                                :width normal)
 
@@ -512,5 +512,7 @@ before packages are loaded."
     )
   (when linux?
     (message "In Linux"))
+  (when macos?
+    (message "In Macos:"))
   )
 
