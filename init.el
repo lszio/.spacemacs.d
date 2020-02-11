@@ -513,6 +513,7 @@ before packages are loaded."
   (when linux?
     (message "In Linux"))
   (when macos?
-    (message "In Macos:"))
+    (message "In Macos")
+    )
   )
 

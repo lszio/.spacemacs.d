@@ -3,12 +3,17 @@
 
 * Install
 ** Emacs
-   version : latest(27.0.50)
-
-   via Lisux (this tool will setup spacemacs)
+   version : latest(26.3)
+   via Autools (this tool will setup spacemacs)
 #+BEGIN_SRC shell
-sh -c "$(curl -fsSL http://raw.github.com/Liszt21/Lisux/master/scripts/install_emacs.sh)"
+# Linux
+# from Github
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Liszt21/AuTools/master/Setup/Linux/Install.sh)"
+# from Gitee
+sh -c "$(curl -fsSL https://gitee.com/liszt21/AuTools/raw/master/Setup/Linux/Install.sh)"
 #+END_SRC
+
+#+RESULTS:
 
 ** Spacemacs
      Scripts
@@ -17,9 +22,9 @@ sh -c "$(curl -fsSL http://raw.github.com/Liszt21/.spacemacs.d/master/scripts/se
 #+END_SRC  
 
 * Features
-  - Different config in linux and windows :: Disable some packages in windows
+  - Different config in linux , windows and Mac :: Disable some packages in windows
   - Develop branch :: Try some awsome packages
-  - Setup script :: spacemacs setup & emacs install (Check Lisux)
+  - Setup script :: spacemacs setup & emacs install (Check Autools)
                     
 * Content
 ** layers

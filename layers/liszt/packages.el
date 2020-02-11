@@ -76,7 +76,12 @@ Each entry is either:
 
 (defun liszt/init-cnfonts()
   (use-package cnfonts)
-  (if (not macos?) (cnfonts-enable))
+  ;; (when (not macos?)
+  ;;   (cnfonts-enable)
+  ;;   ()
+  ;;   )
+  (cnfonts-enable)
+  (setq cnfonts-use-system-type t)
   )
 
 (defun liszt/init-awesome-tab()
