@@ -37,8 +37,7 @@
                             :repo "manateelazycat/awesome-tab"))
     (aweshell :location (recipe
                          :fetcher github
-                         :repo "manateelazycat/aweshell")
-              :toggle linux?)
+                         :repo "manateelazycat/aweshell"))
     ;; (eaf :location (recipe
     ;;                 :fetcher github
     ;;                 :repo "manateelazycat/emacs-application-framework")
@@ -85,11 +84,10 @@ Each entry is either:
   )
 
 (defun liszt/init-awesome-tab()
-  (use-package awesome-tab
-    :config
-    (awesome-tab-mode t)
-    (setq awesome-tab-style 'box)
-    ))
+  (use-package awesome-tab)
+  (setq awesome-tab t)
+  (setq awesome-tab-style "box")
+  )
 
 
 (defun liszt/init-eaf()
@@ -97,9 +95,10 @@ Each entry is either:
   )
 
 (defun liszt/init-aweshell()
-  (use-package aweshell)
+  (use-package aweshell
+    :config
   )
-
+)
 (defun liszt/init-posframe()
   (use-package posframe)
   )

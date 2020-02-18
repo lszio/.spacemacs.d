@@ -8,6 +8,8 @@
 
 (setq org-directory (concat liszt-home "/Notes"))
 
+(setq org-agenda-files (list (concat org-directory "/Inbox.org")
+                             (concat org-directory "/Next.org")))
 ;;set status for TODO.
 (setq org-todo-keywords
       '((sequence "INBOX" "NEXT" "LATER" "WAIT" "FUTURE" "|" "CANCEL" "DONE")))
