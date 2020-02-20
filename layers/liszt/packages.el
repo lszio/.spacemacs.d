@@ -49,6 +49,7 @@
     posframe
     pyim
     leetcode
+    vue-mode
     )
   "The list of Lisp packages required by the liszt layer.
 
@@ -76,6 +77,8 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+(defun liszt/init-vue-mode()
+  (use-package vue-mode))
 
 (defun liszt/init-snails()
   (add-to-list 'load-path "~/.emacs.d/.cache/quelpa/build/snails")
@@ -83,6 +86,7 @@ Each entry is either:
   ;; (use-package snails)
   ;; (require 'snails)
   )
+
 (defun liszt/init-cnfonts()
   (use-package cnfonts)
   ;; (when (not macos?)
