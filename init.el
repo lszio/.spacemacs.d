@@ -45,27 +45,6 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
      ;; -- spacemacs --
      helm
-     treemacs
-     ;; -- languages --
-     yaml
-     python
-     html
-     markdown
-     typescript
-     javascript
-     (shell :variables
-            shell-default-height 30
-            shell-default-position 'bottom)
-     ;; ---- tools ----
-     git
-     wakatime
-     plantuml
-     graphviz
-     auto-completion
-     better-defaults
-     ;; spell-checking
-     syntax-checking
-     multiple-cursors
      ;; --  my layer --
      liszt
      )
