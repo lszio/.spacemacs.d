@@ -31,17 +31,14 @@
 
 (defconst liszt-packages
   '(
-    (snails :location (recipe
-                       :fetcher github
-                       :repo "manateelazycat/snails"))
     (cnfonts)
     (awesome-tab :location (recipe
                             :fetcher github
                             :repo "manateelazycat/awesome-tab"))
-    (aweshell :location (recipe
-                         :fetcher github
-                         :repo "manateelazycat/aweshell"
-                         :toggle linux?))
+    ;;(aweshell :location (recipe
+    ;;                     :fetcher github
+    ;;                     :repo "manateelazycat/aweshell"
+    ;;                     :toggle linux?))
     ;; (eaf :location (recipe
     ;;                 :fetcher github
     ;;                 :repo "manateelazycat/emacs-application-framework")
@@ -77,19 +74,8 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
-(defun liszt/init-snails()
-  (add-to-list 'load-path "~/.emacs.d/.cache/quelpa/build/snails")
-  (require 'snails)
-  ;; (use-package snails)
-  ;; (require 'snails)
-  )
-
 (defun liszt/init-cnfonts()
   (use-package cnfonts)
-  ;; (when (not macos?)
-  ;;   (cnfonts-enable)
-  ;;   ()
-  ;;   )
   (cnfonts-enable)
   (setq cnfonts-use-system-type t)
   )
@@ -108,9 +94,7 @@ Each entry is either:
   )
 
 (defun liszt/init-aweshell()
-  (use-package aweshell
-    :config
-  )
+  (use-package aweshell)
 )
 (defun liszt/init-posframe()
   (use-package posframe)

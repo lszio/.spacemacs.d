@@ -20,6 +20,6 @@
 (global-set-key (kbd "s-0") 'awesome-tab-select-visible-tab)
 
 
-;; (setq url-proxy-services
-;;       '(("http" . "127.0.0.1:1087")
-;;         ("https" . "127.0.0.1:1087")))
+(setq url-proxy-services
+      '(("http" . "127.0.0.1:1081")
+        ("https" . "127.0.0.1:1081")))
