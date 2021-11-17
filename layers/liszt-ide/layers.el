@@ -1,26 +1,65 @@
+(configuration-layer/declare-layers
+ '(
+    ;; -- languages --
+    python
+    ;; frontend
+    prettier
+    (html :variables
+          web-fmt-tool 'prettier)
+    (javascript :variables
+                js2-basic-offset 2
+                js-indent-level 2)
 
-(configuration-layer/declare-layers '(
-                                      ;; -- languages --
-                                      yaml
-                                      python
-                                      html
-                                      markdown
-                                      typescript
-                                      javascript
-                                      (shell :variables
-                                             shell-default-height 30
-                                             shell-default-position 'bottom)
-                                      ;; -- complate --
-                                      auto-completion
-                                      lsp
-                                      ;; ---- tools ----
-                                      git
-                                      wakatime
-                                      plantuml
-                                      graphviz
-                                      better-defaults
-                                      multiple-cursors
-                                      treemacs
-                                      ;; spell-checking
-                                      syntax-checking
-                                      ))
+    (json :variables
+          json-fmt-tool 'prettier)
+    (typescript :variables
+                typescript-linter 'eslint
+                typescript-fmt-tool 'prettier
+                typescript-indent-level 2)
+
+    (vue :variables
+         vue-backend 'lsp)
+    react
+    yaml
+    (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom)
+    (julia :variables julia-backend 'lsp)
+    ;; lisp
+    parinfer
+    common-lisp
+    emacs-lisp
+    scheme
+    (clojure :variables
+             clojure-backend 'cider               ;; use cider and disable lsp
+             clojure-enable-linters 'clj-kondo    ;; clj-kondo included in lsp
+             cider-repl-display-help-banner nil      ;; disable help banner
+             cider-pprint-fn 'fipp                   ;; fast pretty printing
+             clojure-indent-style 'align-arguments
+             clojure-align-forms-automatically t
+             clojure-toplevel-inside-comment-form t  ;; evaluate expressions in comment as top level
+             cider-result-overlay-position 'at-point ;; results shown right after expression
+             cider-overlays-use-font-lock t
+             cider-repl-buffer-size-limit 100)        ;; limit lines shown in REPL buffer
+
+    ;; -- complate --
+    (auto-completion :variables auto-completion-use-company-box t)
+    lsp
+    ;; ---- tools ----
+    git
+    markdown
+    wakatime
+    plantuml
+    graphviz
+    better-defaults
+    multiple-cursors
+    treemacs
+    ;; spell-checking
+    syntax-checking
+    command-log
+    (ranger :variables
+            ranger-show-preview t
+            ranger-show-hidden t
+            ranger-cleanup-eagerly t
+            ranger-cleanup-on-disable t
+            ranger-ignored-extensions '("mkv" "flv" "iso" "mp4"))))

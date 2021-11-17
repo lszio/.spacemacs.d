@@ -1,4 +1,4 @@
-;;; packages.el --- liszt-ide layer packages file for Spacemacs.
+;;; packages.el --- liszt-ui layer packages file for Spacemacs.
 ;;
 ;; Copyright (c) 2012-2021 Sylvain Benner & Contributors
 ;;
@@ -29,20 +29,20 @@
 ;;
 ;;
 ;; Briefly, each package to be installed or configured by this layer should be
-;; added to `liszt-ide-packages'. Then, for each package PACKAGE:
+;; added to `liszt-ui-packages'. Then, for each package PACKAGE:
 ;;
 ;; - If PACKAGE is not referenced by any other Spacemacs layer, define a
-;;   function `liszt-ide/init-PACKAGE' to load and initialize the package.
+;;   function `liszt-ui/init-PACKAGE' to load and initialize the package.
 
 ;; - Otherwise, PACKAGE is already referenced by another Spacemacs layer, so
-;;   define the functions `liszt-ide/pre-init-PACKAGE' and/or
-;;   `liszt-ide/post-init-PACKAGE' to customize the package as it is loaded.
+;;   define the functions `liszt-ui/pre-init-PACKAGE' and/or
+;;   `liszt-ui/post-init-PACKAGE' to customize the package as it is loaded.
 
 ;;; Code:
 
-(defconst liszt-ide-packages
+(defconst liszt-ui-packages
   '()
-  "The list of Lisp packages required by the liszt-ide layer.
+  "The list of Lisp packages required by the liszt-ui layer.
 
 Each entry is either:
 

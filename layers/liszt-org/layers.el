@@ -1,6 +1,11 @@
 
-(configuration-layer/declare-layers '(
-                                      ;; -- personal ---
-                                      (org :variables
-                                           org-enable-org-journal-support t)
-                                      ))
+(configuration-layer/declare-layers
+ '(
+   (org :variables
+        org-enable-github-support t
+        org-enable-bootstrap-support t
+        org-enable-reveal-js-support t
+        org-want-todo-bindings t
+        org-enable-org-journal-support
+        torg-enable-roam-support t)
+   deft))

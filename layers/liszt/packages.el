@@ -1,13 +1,24 @@
 ;;; packages.el --- liszt layer packages file for Spacemacs.
 ;;
-;; Copyright (c) 2012-2018 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2021 Sylvain Benner & Contributors
 ;;
-;; Author:  <liszt@LISZT-MECHREVO>
+;; Author: LISZT-THINKPAD <liszt@LISZT-THINKPAD>
 ;; URL: https://github.com/syl20bnr/spacemacs
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
-;;; License: GPLv3
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ;;; Commentary:
 
@@ -30,23 +41,7 @@
 ;;; Code:
 
 (defconst liszt-packages
-  '(
-    (cnfonts)
-    (awesome-tab :location (recipe
-                            :fetcher github
-                            :repo "manateelazycat/awesome-tab"))
-    ;;(aweshell :location (recipe
-    ;;                     :fetcher github
-    ;;                     :repo "manateelazycat/aweshell"
-    ;;                     :toggle linux?))
-    ;; (eaf :location (recipe
-    ;;                 :fetcher github
-    ;;                 :repo "manateelazycat/emacs-application-framework")
-    ;;       :toggle linux?)
-    posframe
-    pyim
-    leetcode
-    )
+  '()
   "The list of Lisp packages required by the liszt layer.
 
 Each entry is either:
@@ -73,85 +68,3 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
-
-(defun liszt/init-cnfonts()
-  (use-package cnfonts)
-  (cnfonts-enable)
-  (setq cnfonts-use-system-type t)
-  )
-
-(defun liszt/init-awesome-tab()
-  (use-package awesome-tab
-    :config
-    (awesome-tab-mode t)
-    )
-  (setq awesome-tab-style "box")
-  )
-
-
-(defun liszt/init-eaf()
-  (use-package eaf)
-  )
-
-(defun liszt/init-aweshell()
-  (use-package aweshell)
-)
-(defun liszt/init-posframe()
-  (use-package posframe)
-  )
-
-(defun liszt/init-leetcode()
-  (use-package leetcode
-    :config
-    (setq leetcode-prefer-language "python3")
-    (setq leetcode-prefer-sql "sqlite")
-    ))
-
-(defun liszt/init-pyim()
-  ;; (use-package pyim)
-  (use-package pyim
-    :ensure nil
-    :demand t
-    :config
-    (use-package pyim-basedict
-      :ensure nil
-      :config (pyim-basedict-enable))
-
-    (setq default-input-method "pyim")
-
-    ;; 我使用全拼
-    (setq pyim-default-scheme 'quanpin)
-
-    ;; 设置 pyim 探针设置，这是 pyim 高级功能设置，可以实现 *无痛* 中英文切换 :-)
-    ;; 我自己使用的中英文动态切换规则是：
-    ;; 1. 光标只有在注释里面时，才可以输入中文。
-    ;; 2. 光标前是汉字字符时，才能输入中文。
-    ;; 3. 使用 M-j 快捷键，强制将光标前的拼音字符串转换为中文。
-    (setq-default pyim-english-input-switch-functions
-                  '(pyim-probe-dynamic-english
-                    pyim-probe-isearch-mode
-                    pyim-probe-program-mode
-                    pyim-probe-org-structure-template))
-
-    (setq-default pyim-punctuation-half-width-functions
-                  '(pyim-probe-punctuation-line-beginning
-                    pyim-probe-punctuation-after-punctuation))
-
-    ;; 开启拼音搜索功能
-    (pyim-isearch-mode 1)
-
-    ;; 使用 pupup-el 来绘制选词框, 如果用 emacs26, 建议设置
-    ;; 为 'posframe, 速度很快并且菜单不会变形，不过需要用户
-    ;; 手动安装 posframe 包。
-    (setq pyim-page-tooltip 'posframe)
-
-    ;; 选词框显示5个候选词
-    (setq pyim-page-length 5)
-
-    :bind
-    (("C-;" . pyim-convert-string-at-point) ;与 pyim-probe-dynamic-english 配合
-    ("C-'" . pyim-delete-word-from-personal-buffer))
-    )
-  )
-(message "|----------------------Load liszt layer-----------------------|")
-;;; packages.el ends here

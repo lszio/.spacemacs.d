@@ -13,13 +13,10 @@
 - [[#description][Description]]
   - [[#features][Features:]]
 - [[#install][Install]]
-  - [[#tabnine][Tabnine]]
-  - [[#wakatime][Wakatime]]
-  - [[#vue-mode][Vue-mode]]
 - [[#key-bindings][Key bindings]]
 
 * Description
-  This layer adds support for something.
+This layer adds support for something.
 
 ** Features:
   - Autocomplete
@@ -32,12 +29,6 @@ To use this configuration layer, add it to your =~/.spacemacs=. You will need to
 add =liszt-ide= to the existing =dotspacemacs-configuration-layers= list in this
 file.
 
-** Tabnine
-
-** Wakatime
-
-** Vue-mode
-   
 * Key bindings
 
 | Key Binding | Description    |
