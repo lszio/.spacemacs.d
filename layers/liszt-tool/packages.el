@@ -41,7 +41,9 @@
 ;;; Code:
 
 (defconst liszt-tool-packages
-  '()
+  '(
+    rime
+    leetcode)
   "The list of Lisp packages required by the liszt-tool layer.
 
 Each entry is either:
@@ -68,3 +70,16 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun liszt-tool/init-rime ()
+  (use-package rime
+    :custom
+    (default-input-method "rime")))
+
+(defun liszt-tool/init-leetcode ()
+  (use-package leetcode
+     :custom
+     (leetcode-prefer-language "python")
+     (leetcode-prefer-sql "sqlite")
+     (leetcode-save-solutions t)
+     (leetcode-directory (concat liszt-home "/Notes/Program/LeetCode"))))
