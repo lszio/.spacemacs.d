@@ -13,6 +13,7 @@
 - [[#description][Description]]
   - [[#features][Features:]]
 - [[#install][Install]]
+  - [[#rime][Rime]]
 - [[#key-bindings][Key bindings]]
 
 * Description
@@ -28,6 +29,9 @@ This layer adds support for something.
 To use this configuration layer, add it to your =~/.spacemacs=. You will need to
 add =liszt-tool= to the existing =dotspacemacs-configuration-layers= list in this
 file.
+
+** Rime
+  [[http://github.com/DogLooksGood/emacs-rime][Emacs-Rime]] 
 
 * Key bindings
 

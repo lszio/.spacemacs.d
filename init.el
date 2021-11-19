@@ -5,6 +5,10 @@
 (defconst linux?   (eq system-type 'gnu/linux) "Are we on a linux machine?")
 (defconst macos?   (eq system-type 'darwin)    "Are we on a macOS machine?")
 (defconst windows? (not (or linux? macos?))    "Are we on windows machine?")
+(defconst wsl?     (and linux?
+                        (string-match-p
+                         "microsoft"
+                         operating-system-release)) "Are we on wsl?")
 
 (defun dotspacemacs/layers ()
   "Layer configuration:
