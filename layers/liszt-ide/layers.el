@@ -46,6 +46,9 @@
     (auto-completion :variables auto-completion-use-company-box t)
     lsp
     ;; ---- tools ----
+    (version-control :variables
+                     version-control-diff-side 'left
+                     version-control-diff-tool 'diff-hl)
     git
     markdown
     wakatime

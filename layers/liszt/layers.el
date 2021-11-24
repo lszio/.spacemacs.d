@@ -4,5 +4,4 @@
    liszt-org
    liszt-ide
    liszt-tool
-   liszt-misc
-   ))
+   liszt-misc))
