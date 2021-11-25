@@ -1,10 +1,11 @@
 (configuration-layer/declare-layers
- '(
-   ;; +editing+
+ '(;; -- editing --
    multiple-cursors
-   ;; +switch+
+   ;; -- switch --
    ibuffer
-   ;; +display+
+   ;; -- display --
    eaf
    treemacs
-   better-defaults))
+   better-defaults
+   ;; -- reading --
+   elfeed))
