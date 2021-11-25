@@ -546,4 +546,6 @@ dump.")
 This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
-before packages are loaded.")
+before packages are loaded."
+  (setq user-full-name "Liszt21"
+        user-mail-address "1832666492@qq.com"))

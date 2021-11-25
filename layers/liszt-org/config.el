@@ -1,18 +1,12 @@
-(setq user-full-name "Liszt21"
-      user-mail-address "1832666492@qq.com")
-
-(if windows?
-    (setq liszt-home "C:/Liszt")
-  (setq liszt-home "~"))
-
-(with-eval-after-load 'org
-  (message "org loaded"))
-
-(setq org-directory (concat liszt-home "/Notes")
+;; liszt-org config
+(setq org-directory "~/Notes"
       org-archive-location (concat org-directory "/Archive/%s::")
-      deft-directory org-directory
       org-roam-directory org-directory
-      ;; org-roam-tag-sources '(prop last-directory)
+      org-roam-v2-ack t
+      deft-directory org-directory
+      deft-extensions '("md" "org")
+      deft-recursive t
+      org-log-done 'time
       org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷"))
 
 (setq org-todo-keywords
@@ -31,7 +25,6 @@
                     "[X](D)"
                     "[Q](Q)")))
 
-(setq org-log-done 'time)
 (setq org-todo-keyword-faces
       '(("TODO" :foreground "orange"       :weight bold)
         ("[ ]"  :foreground "orange"       :weight bold)
@@ -53,3 +46,23 @@
         ("r" "Read"
          entry (file ,(concat org-directory "/Inbox.org"))
          "* TODO %? :Read:\n  %i\n  %a")))
+
+;; fix deft title in roam file
+(defun cm/deft-parse-title (file contents)
+    "Parse the given FILE and CONTENTS and determine the title.
+If `deft-use-filename-as-title' is nil, the title is taken to
+be the first non-empty line of the FILE.  Else the base name of the FILE is
+used as title."
+    (let ((begin (string-match "^#\\+[tT][iI][tT][lL][eE]: .*$" contents)))
+      (if begin
+            (string-trim (substring contents begin (match-end 0)) "#\\+[tT][iI][tT][lL][eE]: *" "[\n\t ]+")
+          (deft-base-filename file))))
+
+(advice-add 'deft-parse-title :override #'cm/deft-parse-title)
+
+(setq deft-strip-summary-regexp
+    (concat "\\("
+            "[\n\t]" ;; blank
+            "\\|^#\\+[[:alpha:]_]+:.*$" ;; org-mode metadata
+            "\\|^:PROPERTIES:\n\\(.+\n\\)+:END:\n"
+            "\\)"))
