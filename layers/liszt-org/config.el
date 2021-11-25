@@ -5,6 +5,9 @@
     (setq liszt-home "C:/Liszt")
   (setq liszt-home "~"))
 
+(with-eval-after-load 'org
+  (message "org loaded"))
+
 (setq org-directory (concat liszt-home "/Notes")
       org-archive-location (concat org-directory "/Archive/%s::")
       deft-directory org-directory
@@ -27,6 +30,7 @@
                     "|"
                     "[X](D)"
                     "[Q](Q)")))
+
 (setq org-log-done 'time)
 (setq org-todo-keyword-faces
       '(("TODO" :foreground "orange"       :weight bold)

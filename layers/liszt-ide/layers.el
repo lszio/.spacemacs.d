@@ -2,21 +2,19 @@
  '(
     ;; -- languages --
     python
-    ;; frontend
+    ;; -- frontend --
     prettier
     (html :variables
           web-fmt-tool 'prettier)
     (javascript :variables
                 js2-basic-offset 2
                 js-indent-level 2)
-
     (json :variables
           json-fmt-tool 'prettier)
     (typescript :variables
                 typescript-linter 'eslint
                 typescript-fmt-tool 'prettier
                 typescript-indent-level 2)
-
     (vue :variables
          vue-backend 'lsp)
     react
@@ -25,7 +23,7 @@
             shell-default-height 30
             shell-default-position 'bottom)
     (julia :variables julia-backend 'lsp)
-    ;; lisp
+    ;; -- lisp --
     parinfer
     common-lisp
     emacs-lisp
@@ -41,22 +39,17 @@
              cider-result-overlay-position 'at-point ;; results shown right after expression
              cider-overlays-use-font-lock t
              cider-repl-buffer-size-limit 100)        ;; limit lines shown in REPL buffer
-
     ;; -- complate --
     (auto-completion :variables auto-completion-use-company-box t)
     lsp
     ;; ---- tools ----
     (version-control :variables
-                     version-control-diff-side 'left
-                     version-control-diff-tool 'diff-hl)
+                     version-control-diff-side 'left)
     git
     markdown
     wakatime
     plantuml
     graphviz
-    better-defaults
-    multiple-cursors
-    treemacs
     ;; spell-checking
     syntax-checking
     command-log

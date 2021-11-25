@@ -1,8 +1,8 @@
-;;; packages.el --- liszt-misc layer packages file for Spacemacs.
+;;; packages.el --- liszt-kit layer packages file for Spacemacs.
 ;;
 ;; Copyright (c) 2012-2021 Sylvain Benner & Contributors
 ;;
-;; Author: LISZT-THINKPAD <liszt@LISZT-THINKPAD>
+;; Author: Liszt21 <1832666492@qq.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
 ;;
 ;; This file is not part of GNU Emacs.
@@ -29,20 +29,20 @@
 ;;
 ;;
 ;; Briefly, each package to be installed or configured by this layer should be
-;; added to `liszt-misc-packages'. Then, for each package PACKAGE:
+;; added to `liszt-kit-packages'. Then, for each package PACKAGE:
 ;;
 ;; - If PACKAGE is not referenced by any other Spacemacs layer, define a
-;;   function `liszt-misc/init-PACKAGE' to load and initialize the package.
+;;   function `liszt-kit/init-PACKAGE' to load and initialize the package.
 
 ;; - Otherwise, PACKAGE is already referenced by another Spacemacs layer, so
-;;   define the functions `liszt-misc/pre-init-PACKAGE' and/or
-;;   `liszt-misc/post-init-PACKAGE' to customize the package as it is loaded.
+;;   define the functions `liszt-kit/pre-init-PACKAGE' and/or
+;;   `liszt-kit/post-init-PACKAGE' to customize the package as it is loaded.
 
 ;;; Code:
 
-(defconst liszt-misc-packages
+(defconst liszt-kit-packages
   '()
-  "The list of Lisp packages required by the liszt-misc layer.
+  "The list of Lisp packages required by the liszt-kit layer.
 
 Each entry is either:
 
