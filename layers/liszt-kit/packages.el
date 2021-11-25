@@ -41,7 +41,13 @@
 ;;; Code:
 
 (defconst liszt-kit-packages
-  '()
+  '(
+    rime
+    leetcode
+    (popweb :location (recipe
+                       :fetcher github
+                       :repo "manateelazycat/popweb"
+                       :files ("*"))))
   "The list of Lisp packages required by the liszt-kit layer.
 
 Each entry is either:
@@ -68,3 +74,21 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun liszt-kit/init-rime ()
+  (use-package rime
+    :custom
+    (default-input-method "rime")))
+
+(defun liszt-kit/init-leetcode ()
+  (use-package leetcode
+    :custom
+    (leetcode-prefer-language "python")
+    (leetcode-prefer-sql "sqlite")
+    (leetcode-save-solution t)
+    (leetcode-directory "~/Notes/Program/LeetCode")))
+
+(defun liszt-kit/init-popweb ()
+  (use-package popweb))
+  ;; (use-package popweb-dict-youdao)
+  ;; (use-package popweb-latex))
