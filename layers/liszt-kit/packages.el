@@ -89,6 +89,30 @@ Each entry is either:
     (leetcode-directory "~/Notes/Program/LeetCode")))
 
 (defun liszt-kit/init-popweb ()
-  (use-package popweb))
-  ;; (use-package popweb-dict-youdao)
-  ;; (use-package popweb-latex))
+  (use-package popweb)
+  (with-eval-after-load 'popweb
+    (message "Popweb loaded, loading extensions")
+
+    (defun get-popweb-extension-paths (&rest extensions)
+      (catch 'done
+        (dolist (path load-path)
+          (when (string-match "popweb" path)
+            (throw 'done
+                   (mapcar (lambda (p)
+                             (concat path "/extension/" p))
+                           extensions))))))
+
+    ;; (defmacro load-popweb-extensions ()
+    ;;   ;; FIXME 不能加載math-in-point.el
+    ;;   (let ((extension-paths (get-popweb-extension-paths "dict" "latex")))
+    ;;     `(progn
+    ;;            (use-package popweb-dict-youdao :load-path ,(car extension-paths))
+    ;;            (use-package popweb-latex :load-path ,(cadr extension-paths)))))
+
+    (let ((extension-paths (get-popweb-extension-paths "dict" "latex")))
+      (when (not (member (car extension-paths) load-path))
+        (dolist (path extension-paths)
+          (add-to-list 'load-path path))))
+
+    (require 'popweb-dict-youdao)
+    (require 'popweb-latex)))
