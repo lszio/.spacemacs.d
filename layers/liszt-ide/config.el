@@ -5,12 +5,19 @@
         (sbcl ("ros" "-L" "sbcl-bin" "run"))
         (ccl ("ros" "-L" "ccl-bin" "run"))))
 
-;; git-gutter
-(setq-default fringes-outside-margins t)
-;; thin fringe bitmaps
-(define-fringe-bitmap 'git-gutter-fr:added [224]
-  nil nil '(center repeated))
-(define-fringe-bitmap 'git-gutter-fr:modified [224]
-  nil nil '(center repeated))
-(define-fringe-bitmap 'git-gutter-fr:deleted [128 192 224 240]
-  nil nil 'bottom)
+;; vue config
+(setq-default
+ ;; web-mode
+ web-mode-markup-indent-offset 2
+ web-mode-css-indent-offset 2
+ web-mode-code-indent-offset 2
+ web-mode-attr-indent-offset 2)
+
+;; (spacemacs|do-after-display-system-init
+;;   (with-eval-after-load 'git-gutter-fringe
+;;     ;; git-gutter
+;;     (message "git-gutter-fringe loaded")
+;;     ;; (setq-default fringes-outside-margins t)
+;;     (define-fringe-bitmap 'git-gutter-fr:added [224] nil nil '(center repeated))
+;;     (define-fringe-bitmap 'git-gutter-fr:modified [224] nil nil '(center repeated))
+;;     (define-fringe-bitmap 'git-gutter-fr:deleted [128 192 224 240] nil nil 'bottom)))

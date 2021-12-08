@@ -42,7 +42,7 @@
 
 (defconst liszt-kit-packages
   '(
-    rime
+    ;; rime
     leetcode
     (popweb :location (recipe
                        :fetcher github
@@ -75,10 +75,10 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
-(defun liszt-kit/init-rime ()
-  (use-package rime
-    :custom
-    (default-input-method "rime")))
+;; (defun liszt-kit/init-rime ()
+;;   (use-package rime
+;;     :custom
+;;     (default-input-method "rime")))
 
 (defun liszt-kit/init-leetcode ()
   (use-package leetcode

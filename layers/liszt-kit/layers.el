@@ -8,4 +8,6 @@
    treemacs
    better-defaults
    ;; -- reading --
-   elfeed))
+   elfeed
+   ;; -- input --
+   (chinese)))

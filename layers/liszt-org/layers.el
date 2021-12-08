@@ -12,6 +12,6 @@
         org-enable-roam-support t
         org-enable-roam-server t
         org-enable-roam-protocal t
-        org-enable-valign t
+        ;; org-enable-valign t
         org-enable-appear-support t)
    deft))
