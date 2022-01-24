@@ -1,6 +1,7 @@
 ;; liszt-org config
 (setq org-directory "~/Notes"
       org-archive-location (concat org-directory "/Archive/%s::")
+      org-refile-targets '((nil . (:tag . "Done")) (nil . (:level . 1)))
       org-roam-directory org-directory
       org-roam-v2-ack t
       deft-directory org-directory
