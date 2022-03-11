@@ -30,6 +30,7 @@
     common-lisp
     emacs-lisp
     scheme
+    haskell
     (clojure :variables
              clojure-backend 'cider               ;; use cider and disable lsp
              clojure-enable-linters 'clj-kondo    ;; clj-kondo included in lsp
