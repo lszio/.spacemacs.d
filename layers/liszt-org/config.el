@@ -4,6 +4,7 @@
       org-refile-targets '((nil . (:tag . "Done")) (nil . (:level . 1)))
       org-roam-directory org-directory
       org-roam-v2-ack t
+      org-roam-file-exclude-regexp ".*/bak/.*"
       deft-directory org-directory
       deft-extensions '("md" "org")
       deft-recursive t

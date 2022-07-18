@@ -1,4 +1,3 @@
-
 (configuration-layer/declare-layers
  '(
    (org :variables
@@ -12,6 +11,7 @@
         org-enable-roam-support t
         org-enable-roam-server t
         org-enable-roam-protocal t
+        org-enable-roam-ui t
         ;; org-enable-valign t
         org-enable-appear-support t)
    deft))
